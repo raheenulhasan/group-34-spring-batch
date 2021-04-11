@@ -49,6 +49,8 @@ public class LoadController
             System.out.println("...");
         }
 
+        System.out.println("Exiting load() of BatchStatus.");
+
         return jobExecution.getStatus();
     }
 }

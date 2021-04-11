@@ -1,26 +1,35 @@
+
 package com.techprimers.springbatchexample1.batch;
 
-import com.techprimers.springbatchexample1.model.User;
-import com.techprimers.springbatchexample1.repository.UserRepository;
+import java.util.List;
+
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
+import com.techprimers.springbatchexample1.model.User;
+import com.techprimers.springbatchexample1.repository.UserRepository;
 
 @Component
-public class DBWriter implements ItemWriter<User> {
+public class DBWriter implements ItemWriter<User>
+{
 
     private UserRepository userRepository;
 
     @Autowired
-    public DBWriter (UserRepository userRepository) {
+    public DBWriter(UserRepository userRepository)
+    {
         this.userRepository = userRepository;
     }
 
-    @Override
-    public void write(List<? extends User> users) throws Exception{
+    public void write(List<? extends User> users) throws Exception
+    {
+
+        System.out.println("Entering write() of DBWriter.");
+
         System.out.println("Data Saved for Users: " + users);
         userRepository.saveAll(users);
+        System.out.println("Exiting write() of DBWriter.");
+
     }
 }

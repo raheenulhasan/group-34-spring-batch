@@ -23,6 +23,8 @@ public class Processor implements ItemProcessor<User, User>
         DEPT_NAMES.put("001", "Technology");
         DEPT_NAMES.put("002", "Operations");
         DEPT_NAMES.put("003", "Accounts");
+        System.out.println("Exiting Processor() of Processor.");
+
     }
 
     public User process(User user) throws Exception
@@ -35,6 +37,8 @@ public class Processor implements ItemProcessor<User, User>
         user.setDept(dept);
         user.setTime(new Date());
         System.out.println(String.format("Converted from [%s] to [%s]", deptCode, dept));
+        System.out.println("Exiting process() of Processor.");
+
         return user;
     }
 }

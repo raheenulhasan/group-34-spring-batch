@@ -29,5 +29,7 @@ public class DBWriter implements ItemWriter<User>
 
         System.out.println("Data Saved for Users: " + users);
         userRepository.saveAll(users);
+        System.out.println("Exiting write() of DBWriter.");
+
     }
 }

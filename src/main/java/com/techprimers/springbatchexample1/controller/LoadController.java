@@ -1,6 +1,7 @@
 
 package com.techprimers.springbatchexample1.controller;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -34,7 +35,7 @@ public class LoadController
     public BatchStatus load() throws JobParametersInvalidException, JobExecutionAlreadyRunningException, JobRestartException, JobInstanceAlreadyCompleteException
     {
 
-        System.out.println("Entering load() of BatchStatus.");
+        System.out.println("Entering load() of BatchStatus." + new Date());
 
         Map<String, JobParameter> maps = new HashMap<String, JobParameter>();
         maps.put("time", new JobParameter(System.currentTimeMillis()));

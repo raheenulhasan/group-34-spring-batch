@@ -71,7 +71,7 @@ public class SpringBatchConfig {
 
         defaultLineMapper.setLineTokenizer(lineTokenizer);
         defaultLineMapper.setFieldSetMapper(fieldSetMapper);
-
+        system.out.println("Putting config sysout to test.");
         return defaultLineMapper;
     }
 

@@ -1,7 +1,7 @@
 # group-34-spring-batch
 Spring Boot Batch project to convert CSV to Database
 
-# Spring Boot Batch Application Project [![Build Status](https://raheenulhasan.github.io/group-34-spring-batch/)]
+# Spring Boot Batch Application Project
 
 ## Table of Contents
 
@@ -49,5 +49,42 @@ The application creates Job and Step Factory to build the job and execute it.
 * 	[ ] Shut down app on button click via actuator url 
 * 	[ ] Spring Boot Admin
 * 	[ ] NoSQL (MongoDB)
+
+## Running the application locally
+
+*	Default active profile is **`test`**.
+*	In the **`test`** profile, the application uses **H2** database (data in memory).
+
+```properties
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=password
+```
+
+### Running the application with IDE
+
+There are several ways to run a Spring Boot application on your local machine. One way is to execute the `main` method in the springbootapplication class from your IDE.
+
+* 	Download the zip or clone the Git repository.
+* 	Unzip the zip file (if you downloaded one)
+* 	Open Command Prompt and Change directory (cd) to folder containing pom.xml
+* 	Open Eclipse
+	* File -> Import -> Existing Maven Project -> Navigate to the folder where you unzipped the zip
+	* Select the project
+* 	Choose the Spring Boot Application file (search for @SpringBootApplication)
+* 	Right Click on the file and Run as Java Application
+
+
+### Running the application with Maven
+
+Alternatively you can use the [Spring Boot Maven plugin](https://docs.spring.io/spring-boot/docs/current/reference/html/build-tool-plugins-maven-plugin.html) like so:
+
+```shell
+$ git clone https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template.git
+$ cd Spring-Boot-Application-Template
+$ mvn spring-boot:run
+```
+
 
 

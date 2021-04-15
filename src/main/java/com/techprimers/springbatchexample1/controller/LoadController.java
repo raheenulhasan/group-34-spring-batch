@@ -44,10 +44,10 @@ public class LoadController
 
         System.out.println("JobExecution: " + jobExecution.getStatus());
 
-        System.out.println("Batch is Running...");
+        System.out.println("Batch is Running...with parameters");
         while (jobExecution.isRunning())
         {
-            System.out.println("...");
+            System.out.println("...Running");
         }
 
         System.out.println("Exiting load() of BatchStatus.");

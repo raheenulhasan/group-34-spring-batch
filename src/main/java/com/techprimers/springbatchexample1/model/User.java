@@ -65,6 +65,7 @@ public class User {
         sb.append(", dept='").append(dept).append('\'');
         sb.append(", salary=").append(salary);
         sb.append('}');
+        system.out.println(sb.toString());
         return sb.toString();
     }
 

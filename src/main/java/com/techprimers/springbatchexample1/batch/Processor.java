@@ -30,7 +30,7 @@ public class Processor implements ItemProcessor<User, User>
     public User process(User user) throws Exception
     {
 
-        System.out.println("Entering process() of Processor.");
+        System.out.println("Entering process() of Processor." + new Date());
 
         String deptCode = user.getDept();
         String dept = DEPT_NAMES.get(deptCode);

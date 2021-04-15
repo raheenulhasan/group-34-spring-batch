@@ -62,6 +62,9 @@ spring.datasource.username=sa
 spring.datasource.password=password
 ```
 
+URL to kickstart the application from Browser : ##http://localhost:8081/load
+
+
 ### Running the application with IDE
 
 There are several ways to run a Spring Boot application on your local machine. One way is to execute the `main` method in the springbootapplication class from your IDE.
@@ -81,10 +84,101 @@ There are several ways to run a Spring Boot application on your local machine. O
 Alternatively you can use the [Spring Boot Maven plugin](https://docs.spring.io/spring-boot/docs/current/reference/html/build-tool-plugins-maven-plugin.html) like so:
 
 ```shell
-$ git clone https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template.git
+$ git clone https://github.com/raheenulhasan/group-34-spring-batch.git
 $ cd Spring-Boot-Application-Template
 $ mvn spring-boot:run
 ```
 
+### Running the application with Executable JAR
+
+The code can also be built into a jar and then executed/run. Once the jar is built, run the jar by double clicking on it or by using the command 
+
+```shell
+$ git clone https://github.com/raheenulhasan/group-34-spring-batch.git
+$ cd Spring-Boot-Application-Template
+$ mvn package -DskipTests
+$ java -jar target/SpringBootCSV-0.0.1-SNAPSHOT.jar --spring.profiles.active=test
+```
+
+To shutdown the jar, follow the below mentioned steps on a Windows machine.
+
+*	In command prompt execute the **jcmd** command to print a list of all running Java processes
+*	**Taskkill /PID PROCESS_ID_OF_RUNNING_APP /F** execute this command by replacing the **PROCESS_ID_OF_RUNNING_APP** with the actual process id of the running jar found out from executing the previous command
 
 
+### Accessing Data in H2 Database
+
+#### H2 Console
+
+URL to access H2 console: **https://localhost:8080/h2-console/login.jsp** or **https://192.168.99.102:8080/h2-console/login.jsp**
+
+Fill the login form as follows and click on Connect:
+
+* 	Saved Settings: **Generic H2 (Embedded)**
+* 	Setting Name: **Generic H2 (Embedded)**
+* 	Driver class: **org.h2.Driver**
+* 	JDBC URL: **jdbc:h2:mem:sbat;MODE=MySQL**
+* 	User Name: **sa**
+* 	Password:
+
+
+## Directory Structure
+
+C:.
+│   .classpath
+│   .gitignore
+│   .project
+│   LICENSE
+│   mvnw
+│   mvnw.cmd
+│   pom.xml
+│   README.md
+│
+├───.settings
+│       org.eclipse.core.resources.prefs
+│       org.eclipse.jdt.core.prefs
+│       org.hibernate.eclipse.console.prefs
+│
+├───src
+│   ├───main
+│   │   ├───java
+│   │   │   └───com
+│   │   │       └───techprimers
+│   │   │           └───springbatchexample1
+│   │   │               │   SpringBatchExample1Application.java
+│   │   │               │
+│   │   │               ├───batch
+│   │   │               │       DBWriter.java
+│   │   │               │       Processor.java
+│   │   │               │
+│   │   │               ├───config
+│   │   │               │       SpringBatchConfig.java
+│   │   │               │
+│   │   │               ├───controller
+│   │   │               │       LoadController.java
+│   │   │               │
+│   │   │               ├───model
+│   │   │               │       User.java
+│   │   │               │
+│   │   │               └───repository
+│   │   │                       UserRepository.java
+│   │   │
+│   │   └───resources
+│   │           application.properties
+│   │           users.csv
+│   │
+│   └───test
+│       └───java
+│           └───com
+│               └───techprimers
+│                   └───springbatchexample1
+│                           SpringBatchExample1ApplicationTests.java
+│
+└───target
+    ├───classes
+    │   │   .gitignore
+    │   │
+    │   └───META-INF
+    │           MANIFEST.MF
+    │
+    └───test-classes

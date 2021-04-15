@@ -63,7 +63,7 @@ spring.datasource.password=password
 ```
 
 URL to kickstart the application from Browser : 
-## http://localhost:8081/load
+### http://localhost:8081/load
 
 
 ### Running the application with IDE
@@ -122,66 +122,3 @@ Fill the login form as follows and click on Connect:
 * 	User Name: **sa**
 * 	Password:
 
-
-## Directory Structure
-
-```text
-.
-├── Spring Elements
-│   .classpath
-│   .gitignore
-│   .project
-│   LICENSE
-│   mvnw
-│   mvnw.cmd
-│   pom.xml
-│   README.md
-│
-├───.settings
-│       org.eclipse.core.resources.prefs
-│       org.eclipse.jdt.core.prefs
-│       org.hibernate.eclipse.console.prefs
-│
-├───src
-│   ├───main
-│   │   ├───java
-│   │   │   └───com
-│   │   │       └───techprimers
-│   │   │           └───springbatchexample1
-│   │   │               │   SpringBatchExample1Application.java
-│   │   │               │
-│   │   │               ├───batch
-│   │   │               │       DBWriter.java
-│   │   │               │       Processor.java
-│   │   │               │
-│   │   │               ├───config
-│   │   │               │       SpringBatchConfig.java
-│   │   │               │
-│   │   │               ├───controller
-│   │   │               │       LoadController.java
-│   │   │               │
-│   │   │               ├───model
-│   │   │               │       User.java
-│   │   │               │
-│   │   │               └───repository
-│   │   │                       UserRepository.java
-│   │   │
-│   │   └───resources
-│   │           application.properties
-│   │           users.csv
-│   │
-│   └───test
-│       └───java
-│           └───com
-│               └───techprimers
-│                   └───springbatchexample1
-│                           SpringBatchExample1ApplicationTests.java
-│
-└───target
-    ├───classes
-    │   │   .gitignore
-    │   │
-    │   └───META-INF
-    │           MANIFEST.MF
-    │
-    └───test-classes

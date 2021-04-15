@@ -62,7 +62,8 @@ spring.datasource.username=sa
 spring.datasource.password=password
 ```
 
-URL to kickstart the application from Browser : ##http://localhost:8081/load
+URL to kickstart the application from Browser : 
+## http://localhost:8081/load
 
 
 ### Running the application with IDE
@@ -124,7 +125,9 @@ Fill the login form as follows and click on Connect:
 
 ## Directory Structure
 
-C:.
+```text
+.
+├── Spring Elements
 │   .classpath
 │   .gitignore
 │   .project
